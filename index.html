@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHILAJIT</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://img.freepik.com/premium-photo/black-coal-industrial-banner-poster-wallpaper-background_893055-12347.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            overflow-x: hidden;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 2px solid #ccc;
+            position: relative;
+            overflow: hidden;
+        }
+        .header img {
+            width: 30%;
+            max-width: 150px;
+            transition: transform 0.5s;
+        }
+        .header img:hover {
+            transform: scale(1.05);
+        }
+        .header h1 {
+            font-size: 2em;
+            animation: colorChange 10s infinite;
+        }
+        @keyframes colorChange {
+            0%, 50% {
+                color: gold;
+            }
+            50%, 100% {
+                color: black;
+            }
+        }
+        .product {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+        .product.hidden {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        .product img {
+            width: 100%;
+            max-width: 300px;
+            transition: transform 0.5s;
+        }
+        .product img:hover {
+            transform: scale(1.1);
+        }
+        .product h2 {
+            margin: 10px 0;
+            color: #007BFF;
+            transition: color 0.3s;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .product h2:hover {
+            color: #0056b3;
+        }
+        .product p {
+            margin: 10px 0;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .buy-now {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .buy-now:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+        .change-product {
+            display: inline-block;
+            margin-top: 10px;
+            text-align: center;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .change-product img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .change-product img:hover {
+            transform: rotate(360deg);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://cdn.shopify.com/s/files/1/2101/4997/files/Shilajit_Altai_Black_Gold_Logo-40-40_480x480.png?v=1686794201" alt="Image du produit">
+        <h1>SHILAJIT</h1>
+    </div>
+    <div class="product" id="product1">
+        <img src="https://m.media-amazon.com/images/I/71pc19h8wBL._AC_SX425_.jpg" alt="Produit 1">
+        <h2>Shilajit Resin Himalayan</h2>
+        <p>Shilajit Resin Himalayan 50 g – Résine Shilajit naturelle originale Force maximale 600 mg pour hommes et femmes</p>
+        <p>Prix: €23.99</p>
+        <a href="https://www.amazon.fr/Shilajit-Resin-Himalayan-naturelle-originale/dp/B0D4QBY9F6/ref=asc_df_B0D4QBY9F6?tag=bingshoppin0f-21&linkCode=df0&hvadid=80608136860068&hvnetw=o&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=&hvtargid=pla-4584207602186097&th=1" class="buy-now">Buy Now</a>
+        <div class="change-product">
+            <img src="https://th.bing.com/th/id/R.2f7a39738b9f482b08c939a2187a5184?rik=F6ZMkbXzs9KeSg&riu=http%3a%2f%2ffreevector.co%2fwp-content%2fuploads%2f2014%2f07%2f14550-synchronize1.png&ehk=DCz2kvjyxtdKzuHWnB2pLOZNGAYTRWYjsgqUAezt0LY%3d&risl=&pid=ImgRaw&r=0" alt="Changer de produit" onclick="changeProduct()">
+        </div>
+    </div>
+    <div class="product hidden" id="product2">
+        <img src="https://m.media-amazon.com/images/I/61SfXitzh9L._AC_SX425_.jpg" alt="Produit 2">
+        <h2>Shilajit Résine naturelle de l'Himalayan</h2>
+        <p>Shilajit Résine naturelle de l'Himalayan 30 g pour homme et femme</p>
+        <p>Prix: €24.99</p>
+        <a href="https://www.amazon.fr/Shilajit-Resin-Himalayan-naturelle-originale/dp/B0D53K3G78/ref=asc_df_B0D4QBY9F6?tag=bingshoppin0f-21&linkCode=df0&hvadid=80608136860068&hvnetw=o&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=&hvtargid=pla-4584207602186097&th=1" class="buy-now">Buy Now</a>
+        <div class="change-product">
+            <img src="https://th.bing.com/th/id/R.2f7a39738b9f482b08c939a2187a5184?rik=F6ZMkbXzs9KeSg&riu=http%3a%2f%2ffreevector.co%2fwp-content%2fuploads%2f2014%2f07%2f14550-synchronize1.png&ehk=DCz2kvjyxtdKzuHWnB2pLOZNGAYTRWYjsgqUAezt0LY%3d&risl=&pid=ImgRaw&r=0" alt="Changer de produit" onclick="changeProduct()">
+        </div>
+    </div>
+
+    <script>
+        let currentProduct = 1;
+
+        function changeProduct() {
+            const product1 = document.getElementById('product1');
+            const product2 = document.getElementById('product2');
+
+            if (currentProduct === 1) {
+                product1.classList.add('hidden');
+                setTimeout(() => {
+                    product1.style.display = 'none';
+                    product2.style.display = 'block';
+                    setTimeout(() => {
+                        product2.classList.remove('hidden');
+                    }, 10);
+                }, 500);
+                currentProduct = 2;
+            } else {
+                product2.classList.add('hidden');
+                setTimeout(() => {
+                    product2.style.display = 'none';
+                    product1.style.display = 'block';
+                    setTimeout(() => {
+                        product1.classList.remove('hidden');
+                    }, 10);
+                }, 500);
+                currentProduct = 1;
+            }
+        }
+    </script>
+</body>
+</html>
